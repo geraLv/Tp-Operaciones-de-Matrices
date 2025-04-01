@@ -6,9 +6,13 @@
       .main {
         display: flex;
         flex-direction: column;
-        width: full;
+        width: screen;
         height: full;
-        align-items: center;
+
+        justify-content: space-between;
+        padding-right: 10%;
+        padding-top: 10%;
+        padding-left: 10%;
       }
       .input-box {
         background-color: white;
@@ -16,56 +20,106 @@
       }
       .interfasMatris {
         text-align: center;
-        background: grey;
-        border-radius: 5%;
-        width: 10%;
+        background: rgb(166, 166, 166);
+        border-radius: 10px;
+        width: 30%;
         height: 200px;
-        margin: 2%;
+
         padding: 5%;
+        border: solid 2px;
+        border-color: black;
       }
-      .generar {
-        width: full;
+      .Matrices {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: full;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .matris1 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .input-box {
+        margin: 3px;
+        width: auto;
+        height: 25px;
+        border-radius: 5px;
+      }
+      .enterButton {
+        margin: 10px;
+        width: 10%;
+        height: 25px;
+        background: rgb(11, 178, 239);
+        border: none;
+        border-radius: 5px;
+        border: solid 1px;
+      }
+      .optionButton {
+        margin: 10px;
+        width: auto;
+        height: 25px;
+        background: rgb(11, 178, 239);
+        border: none;
+        border-radius: 5px;
+        border: solid 1px;
+      }
+      .inputs {
+        display: flex;
+        align-items: center;
       }
     </style>
   </head>
   <body>
     <div class="main">
-      <div class="generar">
-        <h1>Sitio Web Simple</h1>
+      <h1>Suma y Multiplicacion de matrices</h1>
+      <div class="Matrices">
         <div class="Matriz1">
-          <input
-            type="text"
-            id="filMatriz1"
-            class="input-box"
-            placeholder="Ingrese la cantidad de filas para la primera matris"
-          />
-          <input
-            type="text"
-            id="colMatriz1"
-            class="input-box"
-            placeholder="Ingrese la cantidad de columnas para la primera matris"
-          />
+          <h2>Ingrese las dimenciones de la primera matriz</h2>
+          <div class="inputs">
+            <h3>Filas:</h3>
+            <input
+              type="text"
+              id="filMatriz1"
+              class="input-box"
+              placeholder="Filas"
+            />
+            <h3>Columnas:</h3>
+            <input
+              type="text"
+              id="colMatriz1"
+              class="input-box"
+              placeholder="Columnas"
+            />
+          </div>
         </div>
         <div class="matriz2">
-          <input
-            type="text"
-            id="filMatriz2"
-            class="input-box"
-            placeholder="Ingrese la cantidad de columnas para la primera matris"
-          />
-          <input
-            type="text"
-            id="colMatriz2"
-            class="input-box"
-            placeholder="Ingrese la cantidad de columnas para la primera matris"
-          />
+          <h2>Ingrese las dimenciones de la segunda matriz</h2>
+          <div class="inputs">
+            <h3>Filas:</h3>
+            <input
+              type="text"
+              id="filMatriz2"
+              class="input-box"
+              placeholder="Filas"
+            />
+            <h3>Columnas:</h3>
+            <input
+              type="text"
+              id="colMatriz2"
+              class="input-box"
+              placeholder="Columnas"
+            />
+          </div>
         </div>
-        <button onclick="generarMatris()" id="colorButton">Enter</button>
+        <button onclick="generarMatris()" class="enterButton">Enter</button>
       </div>
       <div class="interfasMatris">
-        <h3>Elija la operación</h3>
-        <button id="botonSuma" class="botonSuma">Suma</button>
-        <button id="botonMulti">Multiplicacion</button>
+        <h2>Elija la operacion</h2>
+        <button id="botonSuma" class="optionButton">Suma</button>
+        <button id="botonMulti" class="optionButton">Multiplicacion</button>
       </div>
     </div>
 
@@ -150,6 +204,9 @@
           }
           console.log("Suma:");
           console.log(matrizSuma);
+          alert(
+            `Suma:${matrizSuma}, para informacion mas precisa revise la consola`
+          );
         });
       //Multiplicacion
       document
@@ -174,6 +231,9 @@
           }
           console.log("Multiplicacion:");
           console.log(matrizMulti);
+          alert(
+            `Multiplicacion:${matrizMulti}, para informacion mas precisa revise la consola`
+          );
         });
     </script>
   </body>
